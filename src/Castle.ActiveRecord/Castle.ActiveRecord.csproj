@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22C0BEF5-A2C2-4F96-95D0-564A352C1412}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Castle.ActiveRecord</RootNamespace>
+    <AssemblyName>Castle.ActiveRecord</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Castle.ActiveRecord.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CastleKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>packages\Castle.Components.Validator.2.5.0\lib\NET40\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.3\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>packages\Lucene.2.9.2.2\lib\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.0.3\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NHibernate.ByteCode-NH-3.4\src\NHibernate.ByteCode.Castle\bin\Debug\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search">
+      <HintPath>..\..\NHibernate-Search-master\src\NHibernate.Search\bin\Debug-2.0\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.1.2\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.1.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ActiveRecordAttribute.cs" />
+    <Compile Include="Attributes\ActiveRecordSkip.cs" />
+    <Compile Include="Attributes\AddEventListenerAttribute.cs" />
+    <Compile Include="Attributes\AnyAttribute.cs" />
+    <Compile Include="Attributes\BaseAttribute.cs" />
+    <Compile Include="Attributes\BelongsToAttribute.cs" />
+    <Compile Include="Attributes\CollectionIDAttribute.cs" />
+    <Compile Include="Attributes\CompositeKeyAttribute.cs" />
+    <Compile Include="Attributes\CompositeUserTypeAttribute.cs" />
+    <Compile Include="Attributes\Enums.cs" />
+    <Compile Include="Attributes\EventListenerAssemblyAttribute.cs" />
+    <Compile Include="Attributes\EventListenerAttribute.cs" />
+    <Compile Include="Attributes\FieldAttribute.cs" />
+    <Compile Include="Attributes\HasAndBelongsToManyAttribute.cs" />
+    <Compile Include="Attributes\HasManyAttribute.cs" />
+    <Compile Include="Attributes\HasManyToAnyAttribute.cs" />
+    <Compile Include="Attributes\HiLoAttribute.cs" />
+    <Compile Include="Attributes\HqlNamedQueryAttribute.cs" />
+    <Compile Include="Attributes\IgnoreEventListenerAttribute.cs" />
+    <Compile Include="Attributes\ImportAttribute.cs" />
+    <Compile Include="Attributes\JoinedBaseAttribute.cs" />
+    <Compile Include="Attributes\JoinedKeyAttribute.cs" />
+    <Compile Include="Attributes\JoinedTableAttribute.cs" />
+    <Compile Include="Attributes\KeyPropertyAttribute.cs" />
+    <Compile Include="Attributes\NestedAttribute.cs" />
+    <Compile Include="Attributes\NestedParentReferenceAttribute.cs" />
+    <Compile Include="Attributes\OneToOneAttribute.cs" />
+    <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
+    <Compile Include="Attributes\PropertyAccess.cs" />
+    <Compile Include="Attributes\PropertyAttribute.cs" />
+    <Compile Include="Attributes\RawXmlMappingAttribute.cs" />
+    <Compile Include="Attributes\RelationAttribute.cs" />
+    <Compile Include="Attributes\SqlNamedQueryAttribute.cs" />
+    <Compile Include="Attributes\TimestampAttribute.cs" />
+    <Compile Include="Attributes\Validations\ValidateIsUniqueAttribute.cs" />
+    <Compile Include="Attributes\VersionAttribute.cs" />
+    <Compile Include="Attributes\WithAccessAttribute.cs" />
+    <Compile Include="Attributes\WithAccessOptionalTableAttribute.cs" />
+    <Compile Include="ByteCode\LazyInitializer.cs" />
+    <Compile Include="ByteCode\ProxyFactory.cs" />
+    <Compile Include="ByteCode\ProxyFactoryFactory.cs" />
+    <Compile Include="Framework\AbstractNHContributor.cs" />
+    <Compile Include="Framework\ActiveRecordBase.cs" />
+    <Compile Include="Framework\ActiveRecordBase.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordException.cs" />
+    <Compile Include="Framework\ActiveRecordHooksBase.cs" />
+    <Compile Include="Framework\ActiveRecordHooksValidationBase.cs" />
+    <Compile Include="Framework\ActiveRecordLinq.cs" />
+    <Compile Include="Framework\ActiveRecordLinqBase.cs" />
+    <Compile Include="Framework\ActiveRecordMediator.cs" />
+    <Compile Include="Framework\ActiveRecordMediator.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordStarter.cs" />
+    <Compile Include="Framework\ActiveRecordValidationBase.cs" />
+    <Compile Include="Framework\ActiveRecordValidationBase.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordValidationException.cs" />
+    <Compile Include="Framework\ActiveRecordValidator.cs" />
+    <Compile Include="Framework\ARSchemaCreator.cs" />
+    <Compile Include="Framework\Config\ActiveRecordSectionHandler.cs" />
+    <Compile Include="Framework\Config\Configure.cs" />
+    <Compile Include="Framework\Config\DatabaseType.cs" />
+    <Compile Include="Framework\Config\DefaultActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\DefaultDatabaseConfiguration.cs" />
+    <Compile Include="Framework\Config\DefaultFlushType.cs" />
+    <Compile Include="Framework\Config\DefaultStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentNHibernateMapping.cs" />
+    <Compile Include="Framework\Config\FluentStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentStorageTypeSelection.cs" />
+    <Compile Include="Framework\Config\IActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\IConfigurationSource.cs" />
+    <Compile Include="Framework\Config\IDatabaseConfiguration.cs" />
+    <Compile Include="Framework\Config\IMappingSpecification.cs" />
+    <Compile Include="Framework\Config\InPlaceConfigurationSource.cs" />
+    <Compile Include="Framework\Config\IStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\MsSqlServer2000Configuration.cs" />
+    <Compile Include="Framework\Config\MsSqlServer2005Configuration.cs" />
+    <Compile Include="Framework\Config\StorageTypeSelection.cs" />
+    <Compile Include="Framework\Config\XmlConfigurationSource.cs" />
+    <Compile Include="Framework\Config\XmlNhibernateMapping.cs" />
+    <Compile Include="Framework\CriteriaHelper.cs" />
+    <Compile Include="Framework\DictionaryAdapter.cs" />
+    <Compile Include="Framework\HookDispatcher.cs" />
+    <Compile Include="Framework\INHContributor.cs" />
+    <Compile Include="Framework\InterceptorFactory.cs" />
+    <Compile Include="Framework\Internal\ActiveRecordModelBuilder.cs" />
+    <Compile Include="Framework\Internal\ActiveRecordModelCollection.cs" />
+    <Compile Include="Framework\Internal\AssemblyXmlGenerator.cs" />
+    <Compile Include="Framework\Internal\Constants.cs" />
+    <Compile Include="Framework\Internal\EventListener\EventListenerConfig.cs" />
+    <Compile Include="Framework\Internal\EventListener\EventListenerContributor.cs" />
+    <Compile Include="Framework\Internal\IModelBuilderExtension.cs" />
+    <Compile Include="Framework\Internal\Inflector.cs" />
+    <Compile Include="Framework\Internal\IVisitable.cs" />
+    <Compile Include="Framework\Internal\IVisitor.cs" />
+    <Compile Include="Framework\Internal\ModelBuilderExtensionComposite.cs" />
+    <Compile Include="Framework\Internal\Model\ActiveRecordModel.cs" />
+    <Compile Include="Framework\Internal\Model\AnyModel.cs" />
+    <Compile Include="Framework\Internal\Model\BelongsToModel.cs" />
+    <Compile Include="Framework\Internal\Model\CollectionIDModel.cs" />
+    <Compile Include="Framework\Internal\Model\CompositeKeyModel.cs" />
+    <Compile Include="Framework\Internal\Model\CompositeUserTypeModel.cs" />
+    <Compile Include="Framework\Internal\Model\DependentObjectModel.cs" />
+    <Compile Include="Framework\Internal\Model\FieldModel.cs" />
+    <Compile Include="Framework\Internal\Model\HasAndBelongsToManyModel.cs" />
+    <Compile Include="Framework\Internal\Model\HasManyModel.cs" />
+    <Compile Include="Framework\Internal\Model\HasManyToAnyModel.cs" />
+    <Compile Include="Framework\Internal\Model\HiloModel.cs" />
+    <Compile Include="Framework\Internal\Model\ImportModel.cs" />
+    <Compile Include="Framework\Internal\Model\JoinedTableModel.cs" />
+    <Compile Include="Framework\Internal\Model\KeyModel.cs" />
+    <Compile Include="Framework\Internal\Model\NestedModel.cs" />
+    <Compile Include="Framework\Internal\Model\NestedParentReferenceModel.cs" />
+    <Compile Include="Framework\Internal\Model\OneToOneModel.cs" />
+    <Compile Include="Framework\Internal\Model\PrimaryKeyModel.cs" />
+    <Compile Include="Framework\Internal\Model\PropertyModel.cs" />
+    <Compile Include="Framework\Internal\Model\TimestampModel.cs" />
+    <Compile Include="Framework\Internal\Model\VersionModel.cs" />
+    <Compile Include="Framework\Internal\NHibernateNullablesSupport.cs" />
+    <Compile Include="Framework\Internal\Visitors\AbstractDepthFirstVisitor.cs" />
+    <Compile Include="Framework\Internal\Visitors\GraphConnectorVisitor.cs" />
+    <Compile Include="Framework\Internal\Visitors\SemanticVerifierVisitor.cs" />
+    <Compile Include="Framework\Internal\Visitors\XmlGenerationVisitor.cs" />
+    <Compile Include="Framework\ISessionFactoryHolder.cs" />
+    <Compile Include="Framework\IThreadScopeInfo.cs" />
+    <Compile Include="Framework\IValidationProvider.cs" />
+    <Compile Include="Framework\IWebThreadScopeInfo.cs" />
+    <Compile Include="Framework\NHEventListeners.cs" />
+    <Compile Include="Framework\NHSearchContributor.cs" />
+    <Compile Include="Framework\NotFoundException.cs" />
+    <Compile Include="Framework\Queries\ActiveRecordBaseQuery.cs" />
+    <Compile Include="Framework\Queries\ActiveRecordCriteriaQuery.cs" />
+    <Compile Include="Framework\Queries\ActiveRecordMultiQuery.cs" />
+    <Compile Include="Framework\Queries\CountQuery.cs" />
+    <Compile Include="Framework\Queries\HqlBasedQuery.cs" />
+    <Compile Include="Framework\Queries\IActiveRecordQuery.cs" />
+    <Compile Include="Framework\Queries\IActiveRecordQuery.Generic.cs" />
+    <Compile Include="Framework\Queries\LinqQuery.cs" />
+    <Compile Include="Framework\Queries\Modifiers\IQueryModifier.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryParameter.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryRange.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryResultTransformer.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryJoinDefinition.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryReturnDefinition.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryScalarDefinition.cs" />
+    <Compile Include="Framework\Queries\ProjectionQuery.cs" />
+    <Compile Include="Framework\Queries\ScalarProjectionQuery.cs" />
+    <Compile Include="Framework\Queries\ScalarQuery.cs" />
+    <Compile Include="Framework\Queries\ScalarQuery.Generic.cs" />
+    <Compile Include="Framework\Queries\SimpleQuery.cs" />
+    <Compile Include="Framework\Queries\SimpleQuery.Generic.cs" />
+    <Compile Include="Framework\Queries\ValueAndTypeTuple.cs" />
+    <Compile Include="Framework\Scopes\AbstractScope.cs" />
+    <Compile Include="Framework\Scopes\AbstractThreadScopeInfo.cs" />
+    <Compile Include="Framework\Scopes\ConversationalScope.cs" />
+    <Compile Include="Framework\Scopes\ConversationCanceledEventArgs.cs" />
+    <Compile Include="Framework\Scopes\DifferentDatabaseScope.cs" />
+    <Compile Include="Framework\Scopes\FlushAction.cs" />
+    <Compile Include="Framework\Scopes\IConversation.cs" />
+    <Compile Include="Framework\Scopes\IScopeConversation.cs" />
+    <Compile Include="Framework\Scopes\ISessionScope.cs" />
+    <Compile Include="Framework\Scopes\ScopedConversation.cs" />
+    <Compile Include="Framework\Scopes\ScopeMachineryException.cs" />
+    <Compile Include="Framework\Scopes\ScopeUtil.cs" />
+    <Compile Include="Framework\Scopes\SessionScope.cs" />
+    <Compile Include="Framework\Scopes\StatelessSessionScope.cs" />
+    <Compile Include="Framework\Scopes\ThreadScopeAccessor.cs" />
+    <Compile Include="Framework\Scopes\ThreadScopeInfo.cs" />
+    <Compile Include="Framework\Scopes\TransactionScope.cs" />
+    <Compile Include="Framework\SessionFactoryHolder.cs" />
+    <Compile Include="Framework\StatelessSessionWrapper.cs" />
+    <Compile Include="Framework\SupportingUtils.cs" />
+    <Compile Include="Framework\TransactionException.cs" />
+    <Compile Include="Framework\Validators\IsUniqueValidator.cs" />
+    <Compile Include="PrivateAssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testing\InMemoryConnectionProvider.cs" />
+    <Compile Include="Testing\InMemoryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CastleKey.snk" />
+    <None Include="Diagrams\Queries.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

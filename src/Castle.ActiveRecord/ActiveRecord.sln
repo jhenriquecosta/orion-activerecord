@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.ActiveRecord", "Castle.ActiveRecord.csproj", "{22C0BEF5-A2C2-4F96-95D0-564A352C1412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle.ActiveRecord.Web", "..\Castle.ActiveRecord.Web\Castle.ActiveRecord.Web.csproj", "{859357BC-A779-41E6-9A46-EE93909B038C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22C0BEF5-A2C2-4F96-95D0-564A352C1412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C0BEF5-A2C2-4F96-95D0-564A352C1412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C0BEF5-A2C2-4F96-95D0-564A352C1412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C0BEF5-A2C2-4F96-95D0-564A352C1412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859357BC-A779-41E6-9A46-EE93909B038C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859357BC-A779-41E6-9A46-EE93909B038C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859357BC-A779-41E6-9A46-EE93909B038C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859357BC-A779-41E6-9A46-EE93909B038C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
